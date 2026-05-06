@@ -1,0 +1,28 @@
+{
+  "repo": "jobloom",
+  "language": "Elixir",
+  "category": "Backend services",
+  "goal": "Schedule actor-style jobs with retry policy and queue inspection.",
+  "weights": {
+    "signal": 2,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 4
+  },
+  "thresholds": {
+    "ship": 199,
+    "watch": 111
+  },
+  "properties": [
+    "raising signal cannot reduce score",
+    "raising drag cannot improve score",
+    "lane labels must match configured thresholds",
+    "golden fixture ids must remain unique"
+  ],
+  "fixture_files": [
+    "fixtures/golden/scoreboard.csv",
+    "fixtures/golden/lane-matrix.csv",
+    "fixtures/fuzz/mutations.csv",
+    "fixtures/fuzz/boundary-cases.jsonl"
+  ]
+}

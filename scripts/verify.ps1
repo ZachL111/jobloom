@@ -58,3 +58,13 @@ foreach ($pathPattern in $knownPaths) {
 mix test
 
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-jobloom-detail.ps1
+
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-jobloom-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-jobloom-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

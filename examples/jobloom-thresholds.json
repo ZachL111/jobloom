@@ -1,0 +1,17 @@
+{
+  "repo": "jobloom",
+  "thresholds": {
+    "signal": 2,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 4,
+    "ship": 199,
+    "watch": 111
+  },
+  "terms": [
+    "queue pressure",
+    "retry load",
+    "worker slack",
+    "session drift"
+  ]
+}
