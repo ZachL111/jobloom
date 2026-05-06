@@ -56,3 +56,5 @@ foreach ($pathPattern in $knownPaths) {
 }
 
 mix test
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-jobloom-detail.ps1

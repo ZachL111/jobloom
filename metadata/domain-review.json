@@ -1,0 +1,73 @@
+{
+  "repo": "jobloom",
+  "language": "Elixir",
+  "category": "Backend services",
+  "goal": "Schedule actor-style jobs with retry policy and queue inspection.",
+  "review_model": {
+    "terms": [
+      "queue pressure",
+      "retry load",
+      "worker slack",
+      "session drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "queue pressure",
+      "signal": 55,
+      "slack": 44,
+      "drag": 30,
+      "confidence": 64,
+      "score": 128,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "retry load",
+      "signal": 55,
+      "slack": 49,
+      "drag": 22,
+      "confidence": 74,
+      "score": 167,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "worker slack",
+      "signal": 47,
+      "slack": 52,
+      "drag": 27,
+      "confidence": 89,
+      "score": 154,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "session drift",
+      "signal": 79,
+      "slack": 41,
+      "drag": 29,
+      "confidence": 68,
+      "score": 180,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "queue pressure",
+      "signal": 60,
+      "slack": 23,
+      "drag": 29,
+      "confidence": 88,
+      "score": 144,
+      "lane": "ship"
+    }
+  ]
+}
